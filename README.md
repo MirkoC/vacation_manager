@@ -1,24 +1,44 @@
-# README
+### Vacation Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Headers
 
-Things you may want to cover:
+`Authorization: Bearer %some_jwt_token%` _(Not used for `register` and `session endpoints`, only with `vacations` endpoint)_
+`Content-Type`: `application/json`
 
-* Ruby version
+##### Registration `POST /managers`
 
-* System dependencies
+Base url: `https://vacation-manager.herokuapp.com`
 
-* Configuration
+**Example body**
+``` json
+{
+  "email": "email@example.com",
+  "password": "12345678",
+  "password_confirmation": "12345678",
+  "full_name": "Exambpe Name"
+}
+```
 
-* Database creation
+##### Login `POST /managers/sign_in`
 
-* Database initialization
+**Example body**
+``` json
+{
+  "email": "email@example.com",
+  "password": "12345678"
+}
+```
 
-* How to run the test suite
+#### Vacations endpoint `POST /vacations`
 
-* Services (job queues, cache servers, search engines, etc.)
+Required params: `stard_date`, `end_date`, `manager_id` or `worker_id`
 
-* Deployment instructions
+**Example body**
 
-* ...
+```json
+{
+  "manager_id": 6,
+  "start_date": "2017-11-11",
+  "end_date": "2017-11-21"
+}
+```
