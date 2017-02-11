@@ -6,6 +6,7 @@ class VacationsController < ApplicationController
   def create
     @vacation = Vacation.new(vacation_params.merge vacationable: (@manager || @worker))
     if @vacation.save
+      SendInfoAboutNewVacationJob.perform_later(@vacation.id, @current_user.id)
       render :show
     else
       render json: { errors: @vacation.errors }, status: :bad_request

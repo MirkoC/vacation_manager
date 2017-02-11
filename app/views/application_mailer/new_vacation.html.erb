@@ -1,0 +1,7 @@
+<p>
+  Hello <%= @manager.full_name %>,
+</p>
+
+<p>
+  <%= "#{@initiating_manager.full_name} approved vacation for #{@vacation.vacationable.full_name} who is working on a #{@vacation.vacationable_type.underscore} position." %>
+</p>

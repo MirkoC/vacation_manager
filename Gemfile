@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'letter_opener', group: :development
+
 # testing suite Rspec
 group :development, :test do
   gem 'rspec'
