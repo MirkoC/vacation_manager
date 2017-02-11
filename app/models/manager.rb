@@ -4,6 +4,8 @@ class Manager < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :vacations, as: :vacationable, autosave: true, dependent: :destroy
+
   validates :full_name, presence: true
 
   def new_jwt
