@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# scheduler
+gem 'rufus-scheduler'
+
 gem 'letter_opener', group: :development
 
 # testing suite Rspec

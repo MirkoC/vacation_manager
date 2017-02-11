@@ -11,4 +11,12 @@ class ApplicationMailer < ActionMailer::Base
          subject: "#{initiating_manager.full_name} approved vacation for #{vacation.vacationable.full_name}",
          content_type: 'text/html')
   end
+
+  def yearly_reminder(vacationable)
+    @vacationable = vacationable
+
+    mail(to: vacationable.email,
+         subject: 'Yearly reminder to schedule vacations',
+         content_type: 'text/html')
+  end
 end

@@ -158,6 +158,8 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rufus-scheduler (3.3.3)
+      tzinfo
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -200,6 +202,7 @@ DEPENDENCIES
   rails (~> 5.0.1)
   rspec
   rspec-rails
+  rufus-scheduler
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
