@@ -4,7 +4,7 @@ RSpec.describe Manager::SessionsController do
   include_context 'api_helper'
 
   describe :create do
-    let!(:manager) { Manager.create(email: 'test@email.some', password: '12345678') }
+    let!(:manager) { create(:manager, email: 'test@email.some', password: '12345678') }
 
     it 'returns manager response with jwt token' do
       signin_params = { email: manager.email, password: '12345678' }

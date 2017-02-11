@@ -13,6 +13,9 @@ group :development, :test do
   gem 'autotest-standalone'
 end
 
+# factories
+gem 'factory_girl_rails'
+gem 'faker', git: 'git://github.com/stympy/faker.git', branch: 'master'
 # api auth
 gem 'jwt'
 # devise

@@ -16,6 +16,6 @@ class Manager::RegistrationsController < Devise::RegistrationsController
   private
 
   def registration_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password, :password_confirmation, :full_name)
   end
 end

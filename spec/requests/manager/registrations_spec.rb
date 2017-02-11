@@ -3,7 +3,7 @@ require_relative '../api_helper'
 RSpec.describe Manager::RegistrationsController do
   include_context 'api_helper'
   describe :create do
-    let!(:signup_params) { { email: 'test@email.some', password: '12345678', password_confirmation: '12345678' } }
+    let!(:signup_params) { { email: 'test@email.some', password: '12345678', password_confirmation: '12345678', full_name: 'Test Name' } }
 
     it 'creates a new manager and returns jwt token' do
       post '/managers', params: signup_params, headers: headers, as: :json
