@@ -1,0 +1,1 @@
+json.partial! 'manager/manager'
